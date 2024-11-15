@@ -6,6 +6,8 @@ app = Flask(__name__)
 @app.route("/")
 def get_quiz_data():
   with open('quiz_data.json', 'r') as f:
+    quiz_data = json.load(f)
+  return jsonify(quiz_data)
     
 
 if __name__ == "__main__":
